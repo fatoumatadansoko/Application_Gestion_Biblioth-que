@@ -17,8 +17,8 @@
                 <!-- Ligne de séparation -->
                 <hr>
                 <!-- Affichage des messages de statut -->
-                @if (@session('status'))
-                    <div class="alert alert-succes">
+                @if (session('status'))
+                    <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
                 @endif
@@ -33,8 +33,8 @@
                 <form action="/ajouter/traitement" method="POST" class="form-group">
                     @csrf
                     <div class="mb-3">
-                        <label for="partie" class="form-label">partie</label>
-                        <input type="varchar" class="form-control" id="partie" name="partie">
+                        <label for="partie" class="form-label">Partie</label>
+                        <input type="string" class="form-control" id="partie" name="partie">
                     </div>
                     <div class="mb-3">
                         <label for="libelle" class="form-label">Libellé</label>

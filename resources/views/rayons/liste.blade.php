@@ -23,17 +23,17 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <!-- Affichage de l'image de l'article -->
-                        <img src="{{ $rayon->libelle }}" class="card-img-top" alt="{{ $rayon->libelle }}">
+                        <h5 class="card-title">{{ $rayon->libelle }}</h5>
                         <div class="card-body">
                             <!-- Affichage de la partie avec une limite de 100 caractères -->
                             <p class="card-text">{{ Str::limit($rayon->partie, 100) }}</p>
                             <!-- Affichage de la date de création de l'rayon -->
                             
                             <!-- Boutons pour supprimer ou modifier l'rayon -->
-                            {{-- <div>
-                                <a href="{{ url('/delete-rayon/'.$rayon->id) }}" class="btn btn-danger">Supprimer</a>
-                                <a href="/update-rayon/{{ $rayon->id }}" class="btn btn-primary">Modifier un rayon</a>
-                            </div> --}}
+                            <div>
+                                <a href="{{ url('/delete_rayon/'.$rayon->id) }}" class="btn btn-danger">Supprimer</a>
+                                <a href="/update_rayon/{{ $rayon->id }}" class="btn btn-primary">Modifier un rayon</a>
+                            </div>
                         </div>
                     </div>
                 </div>

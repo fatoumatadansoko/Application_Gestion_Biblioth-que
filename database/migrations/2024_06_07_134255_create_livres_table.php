@@ -16,7 +16,7 @@ class CreateLivresTable extends Migration
         Schema::create('livres', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->datetime('date_publication');
+            $table->date('date_publication');
             $table->integer('nombre_page');
             $table->string('auteur');
             $table->string('isbn');

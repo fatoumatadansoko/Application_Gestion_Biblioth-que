@@ -14,18 +14,18 @@
     <style>
     /* CSS pour l'en-tête */
         .navbar-custom {
-            background: linear-gradient(45deg, #efc21e, #efc21e);
+            background-color: #ffffff; /* Fond blanc */
             padding: 15px 10px;
         }
         .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
-            color: #ffffff;
+            color: #000000; /* Texte noir */
             font-size: 18px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
         .navbar-custom .nav-link:hover {
-            color: #d3d3d3;
+            color: #999999; /* Couleur gris foncé au survol */
         }
         .navbar-custom .navbar-toggler {
             border: none;
@@ -44,7 +44,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('img/banner.jpg')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
+                <img src="{{asset('img/logo.jpg')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -65,7 +65,7 @@
         <div class="card-img-overlay">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+          <p class="card-text"><small>Last updated 3</small></p>
         </div>
       </div>
 </body>

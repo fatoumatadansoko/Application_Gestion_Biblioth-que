@@ -73,7 +73,7 @@
         .circle {
     width: 120px;
     height: 120px;
-    background-color: #ffc107;
+    background-color: #188774;
     border-radius: 50%;
     display: flex;
     justify-content: center;

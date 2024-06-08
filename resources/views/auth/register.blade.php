@@ -34,13 +34,13 @@
 <body>
     <div class="row g-0 bg-body-secondary">
         <div class="col-md-6 mb-md-0">
-        <img src="{{asset('img/rafiki.jpg')}}" class="gauche" alt="...">
+        <img src="{{asset('img/banner.jpg')}}" class="gauche" alt="...">
         </div>
         <!-- Conteneur principal -->
         <div class="col-md-6 d-flex align-items-center justify-content-center">
             <div class="container form-box">
                 <div class="text-center mb-4">
-                    <h1>Register</h1>
+                    <h1>S'inscrire</h1>
                 </div>
                 <!-- Affichage des messages de statut -->
                 @if (session('status'))

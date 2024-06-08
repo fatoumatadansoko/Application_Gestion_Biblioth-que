@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [RayonController::class, 'index']);
 
 // Routes pour les livres
+
 Route::get('/index', [RayonController::class, 'index'])->name('index');
 Route::get('/rayons', [RayonController::class, 'affiche'])->name('affiche');
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
 // Routes pour la partie authentification
 // Route::middleware('auth')->group(function () {

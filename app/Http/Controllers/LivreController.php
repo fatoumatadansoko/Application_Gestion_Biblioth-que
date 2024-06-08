@@ -92,4 +92,13 @@ public function update_livre_traitement(Request $request)
     // Rediriger vers la liste des livres avec un message de succès
     return redirect('livre')->with('status', 'Le livre a bien été modifié avec succès.');
 }
+
+public function dashboard() {
+    $category1Count = Livre::where('category_id', 1)->count();
+    $category2Count = Livre::where('category_id', 2)->count();
+    $category3Count = Livre::where('category_id', 3)->count();
+
+    return view('dashboard', compact('category1Count', 'category2Count', 'category3Count'));
+}
+
 }

@@ -14,7 +14,7 @@
     <style>
     /* CSS pour l'en-tête */
         .navbar-custom {
-            background-color: #ffffff; /* Fond blanc */
+            background-color: #22e3e3; /* Fond blanc */
             padding: 15px 10px;
         }
         .navbar-custom .navbar-brand,
@@ -37,6 +37,22 @@
             height: 40px; /* Ajustez la hauteur selon vos besoins */
             width: auto;
         }
+         /* CSS pour la section */
+         .section-container {
+            display: flex;
+            align-items: center;
+        }
+        .image-section {
+            flex: 1;
+            padding: 60px;
+        }
+        .text-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .text-section p {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +60,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('img/logo.jpg')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
+                <img src="{{asset('img/logo.png')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,13 +76,22 @@
             </div>
         </div>
     </nav>
-    <div class="card text-bg-dark">
-        <img src="{{asset('img/livre.jpg')}}"  class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small>Last updated 3</small></p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 section-container">
+                <div class="image-section">
+                    <img src="{{asset('img/livre54.webp')}}" class="img-fluid" alt="...">
+                </div>
+            </div>
+            <div class="col-md-6 section-container">
+                <div class="text-section">
+                    <h2>Description de l'application</h2>
+                    <p>Ceci est une brève description de l'application pour le bibliothécaire. Vous pouvez ajouter ici toutes les fonctionnalités principales de l'application, ses avantages, et tout ce qui peut intéresser les utilisateurs.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+    
+     
 </body>
 </html>

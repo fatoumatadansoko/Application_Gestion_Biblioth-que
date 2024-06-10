@@ -12,7 +12,7 @@
     <!-- Inclusion de Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
-    /* CSS pour l'en-tête */
+        /* CSS pour l'en-tête */
         .navbar-custom {
             background-color: #188774; /* Fond blanc */
             padding: 15px 10px;
@@ -56,20 +56,44 @@
         /* CSS pour la galerie d'images */
         .gallery-img {
             width: 100%;
-            height: 200px; /* Ajustez la hauteur selon vos besoins */
+            height: 400px; /* Ajustez la hauteur selon vos besoins */
             object-fit: cover; /* Cette propriété permet de garder les proportions de l'image et de remplir l'espace disponible */
             margin-bottom: 15px; /* Espace entre les images */
+        }
+        .footer {
+            background-color: #188774;
+            color: #ffffff;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        /* CSS pour le footer */
+        .footer {
+            background-color: #188774;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed; /* Fixer le footer en bas de la page */
+            bottom: 0;
+            left: 0; /* Pour aligner le footer à gauche */
+            z-index: 1000; /* Assurer que le footer reste au-dessus du contenu */
+        }
+        .footer p {
+            margin-bottom: 0; /* Supprimer la marge en bas du texte */
         }
     </style>
 </head>
 <body>
-     <!-- Barre de navigation -->
-     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('img/logo.webp')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
+                <img src="{{ asset('img/logo.webp') }}" alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" id="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -87,32 +111,44 @@
         <div class="row">
             <div class="col-md-6 section-container">
                 <div class="image-section">
-                    <img src="{{asset('img/couverture5.webp')}}" class="img-fluid" alt="...">
+                    <img src="{{ asset('img/couverture5.webp') }}" class="img-fluid" alt="...">
                 </div>
             </div>
             <div class="col-md-6 section-container">
                 <div class="text-section">
                     <h2>Description de l'application</h2>
-                    <p>Ceci est une brève description de l'application pour le bibliothécaire. Vous pouvez ajouter ici toutes les fonctionnalités principales de l'application, ses avantages, et tout ce qui peut intéresser les utilisateurs.</p>
+                    <p>Bienvenue dans notre application de gestion bibliothécaire, un outil innovant conçu pour faciliter la gestion quotidienne de votre bibliothèque. Notre application est destinée exclusivement aux bibliothécaires, offrant une interface intuitive et des fonctionnalités robustes pour une administration efficace des livres, des rayons et des catégories.</p>
                 </div>
             </div>
         </div>
         <div class="container text-center">
             <div class="row">
-              <div class="col"><img src="{{asset('img/couverture1.jpg')}}" alt="Image 1" class="gallery-img"></div>
-              <div class="col"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 2" class="gallery-img"></div>
-              <div class="col"><img src="{{asset('img/couverture3.jpg')}}" alt="Image 3" class="gallery-img"></div>
-              <div class="col"><img src="{{asset('img/couverture1.jpg')}}" alt="Image 4" class="gallery-img"></div>
+                <div class="col"><img src="{{ asset('img/couverture1.jpg') }}" alt="Image 1" class="gallery-img"></div>
+                <div class="col"><img src="{{ asset('img/couverture2.jpg') }}" alt="Image 2" class="gallery-img"></div>
+                <div class="col"><img src="{{ asset('img/couverture3.jpg') }}" alt="Image 3" class="gallery-img"></div>
+                <div class="col"><img src="{{ asset('img/couverture1.jpg') }}" alt="Image 4" class="gallery-img"></div>
             </div>
             <div class="row">
-              <div class="col-8"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 5" class="gallery-img"></div>
-              <div class="col-4"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 6" class="gallery-img"></div>
+                <div class="col-8"><img src="{{ asset('img/couverture2.jpg') }}" alt="Image 5" class="gallery-img"></div>
+                <div class="col-4"><img src="{{ asset('img/couverture2.jpg') }}" alt="Image 6" class="gallery-img"></div>
             </div>
         </div>
     </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bibliothèque. Tous droits réservés.</p>
+        </div>
+    </footer>
     <!-- Inclusion de Bootstrap JS pour les fonctionnalités -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz5y5S1O94mMW6cX/kGNLQiOAODoNa2IZGIdGN4UMwJ+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Iltn41aKlfNrFNPoKNpN4q84Tj69Z+dfBKNNTdZ2oS5K72w9b6ogH6gVQjMLTIll" crossorigin="anonymous"></script>
+    <script>
+        // Ajout de l'événement toggle avec JavaScript
+        document.getElementById('navbar-toggler').addEventListener('click', function() {
+            var navbarNav = document.getElementById('navbarNav');
+            navbarNav.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

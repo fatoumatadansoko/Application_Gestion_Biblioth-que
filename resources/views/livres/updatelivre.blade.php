@@ -6,6 +6,19 @@
     <title>Modifier un livre</title>
     <!-- Inclusion de Bootstrap CSS pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        /* Définition du style personnalisé pour les boutons */
+        .custom-btn {
+            background-color: #188774;
+            border-color: #188774;
+        }
+    
+        .custom-btn:hover {
+            background-color: #136856;
+            border-color: #136856;
+        }
+        </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -55,7 +68,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Modifier le livre</button>
+            <button type="submit" class="btn btn-primary custom-btn">Modifier le livre</button>
         </form>
     </div>
     <!-- Inclusion de Bootstrap JS pour les fonctionnalités interactives -->

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,6 +6,18 @@
     <title>Liste des livres</title>
     <!-- Inclusion de Bootstrap CSS pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Définition du style personnalisé pour les boutons */
+        .custom-btn {
+            background-color: #188774;
+            border-color: #188774;
+        }
+
+        .custom-btn:hover {
+            background-color: #136856;
+            border-color: #136856;
+        }
+    </style>
 </head>
 <body>
     <!-- Conteneur principal -->
@@ -13,7 +25,7 @@
         <!-- Titre de la page -->
         <h1 class="mb-4">Liste des livres</h1>
         <!-- Bouton pour ajouter un nouvel article -->
-        <a href="/ajouter/livre" class="btn btn-primary">Ajouter un livre</a>   
+        <a href="/ajouter/livre" class="btn btn-danger custom-btn">Ajouter un livre</a>   
 
         <!-- Grille Bootstrap pour afficher les articles -->
         <div class="row">
@@ -34,7 +46,7 @@
 
                             <!-- Boutons pour supprimer ou modifier le livre -->
                             <a href="{{ url('/delete_livre/'.$livre->id) }}" class="btn btn-danger">Supprimer</a>
-                            <a href="{{ url('/update_livre/'.$livre->id) }}" class="btn btn-primary">Modifier</a>
+                            <a href="{{ url('/update_livre/'.$livre->id) }}" class="btn btn-primary custom-btn">Modifier</a>
                         </div>
                     </div>
                 </div>

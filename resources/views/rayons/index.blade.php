@@ -14,7 +14,7 @@
     <style>
     /* CSS pour l'en-tête */
         .navbar-custom {
-            background-color: #22e3e3; /* Fond blanc */
+            background-color: #188774; /* Fond blanc */
             padding: 15px 10px;
         }
         .navbar-custom .navbar-brand,
@@ -37,8 +37,8 @@
             height: 40px; /* Ajustez la hauteur selon vos besoins */
             width: auto;
         }
-         /* CSS pour la section */
-         .section-container {
+        /* CSS pour la section */
+        .section-container {
             display: flex;
             align-items: center;
         }
@@ -53,6 +53,13 @@
         .text-section p {
             font-size: 18px;
         }
+        /* CSS pour la galerie d'images */
+        .gallery-img {
+            width: 100%;
+            height: 200px; /* Ajustez la hauteur selon vos besoins */
+            object-fit: cover; /* Cette propriété permet de garder les proportions de l'image et de remplir l'espace disponible */
+            margin-bottom: 15px; /* Espace entre les images */
+        }
     </style>
 </head>
 <body>
@@ -60,7 +67,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('img/logo.png')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
+                <img src="{{asset('img/logo.webp')}}"  alt="Logo"> <!-- Assurez-vous de remplacer "logo.png" par le chemin de votre logo -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -80,7 +87,7 @@
         <div class="row">
             <div class="col-md-6 section-container">
                 <div class="image-section">
-                    <img src="{{asset('img/livre54.webp')}}" class="img-fluid" alt="...">
+                    <img src="{{asset('img/couverture5.webp')}}" class="img-fluid" alt="...">
                 </div>
             </div>
             <div class="col-md-6 section-container">
@@ -90,8 +97,22 @@
                 </div>
             </div>
         </div>
+        <div class="container text-center">
+            <div class="row">
+              <div class="col"><img src="{{asset('img/couverture1.jpg')}}" alt="Image 1" class="gallery-img"></div>
+              <div class="col"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 2" class="gallery-img"></div>
+              <div class="col"><img src="{{asset('img/couverture3.jpg')}}" alt="Image 3" class="gallery-img"></div>
+              <div class="col"><img src="{{asset('img/couverture1.jpg')}}" alt="Image 4" class="gallery-img"></div>
+            </div>
+            <div class="row">
+              <div class="col-8"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 5" class="gallery-img"></div>
+              <div class="col-4"><img src="{{asset('img/couverture2.jpg')}}" alt="Image 6" class="gallery-img"></div>
+            </div>
+        </div>
     </div>
-    
-     
+    <!-- Inclusion de Bootstrap JS pour les fonctionnalités -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

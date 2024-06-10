@@ -100,5 +100,11 @@ public function dashboard() {
 
     return view('dashboard', compact('category1Count', 'category2Count', 'category3Count'));
 }
+public function delete_livre($id)
+{
+    $livre = Livre::findOrFail($id);
+    $livre->delete();
+    return redirect()->route('dashboard')->with('status', 'Livre supprimé avec succès!');
+}
 
 }

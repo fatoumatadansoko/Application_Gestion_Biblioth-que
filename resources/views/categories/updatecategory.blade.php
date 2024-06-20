@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>App Laravel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .custom-btn {
+          background-color: #188774;
+          border-color: #188774;
+      }
+      .custom-btn:hover {
+          background-color: #136856;
+          border-color: #136856;
+      }
+  </style>
   </head>
   <body>
     <div class="container">
@@ -34,7 +44,7 @@
               </div>
            
             <br>
-            <button type="submit" class="btn btn-primary">Modifier une categorie</button>
+            <button type="submit" class="btn custom-btn mb-3">Modifier une categorie</button>
             <br>
             <a href="/category" class="btn btn-danger">Retourner</a>
           </form>

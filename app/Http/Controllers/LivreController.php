@@ -33,25 +33,30 @@ class LivreController extends Controller
     // Méthode pour traiter la soumission du formulaire d'ajout d'un nouvel livre
     public function ajouter_livre_traitement(Request $request)
     {
-        // Créer une nouvelle instance de l'livre
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'date_publication' => 'required|date',
+            'nombre_page' => 'required|integer|min:1',
+            'auteur' => 'required|string|max:255',
+            'isbn' => 'required|string|max:20|unique:livres',
+            'editeur' => 'required|string|max:255',
+            'rayon_id' => 'required|exists:rayons,id',
+            'category_id' => 'required|exists:categories,id',
+        ]);
+
+        // Création d'un nouveau livre
         $livre = new Livre();
-
-        // Assigner les valeurs du formulaire aux attributs de l'livre
-        $livre->titre = $request->titre;
-        $livre->date_publication = $request->date_publication;
-        $livre->nombre_page = $request->nombre_page;
-        $livre->auteur = $request->auteur;
-        $livre->isbn = $request->isbn;
-        $livre->editeur = $request->editeur;
-        $livre->rayon_id = $request->rayon_id;
-        $livre->category_id = $request->category_id;
-        
-
-        // Sauvegarder l'livre dans la base de données
+        $livre->titre = $request->input('titre');
+        $livre->date_publication = $request->input('date_publication');
+        $livre->nombre_page = $request->input('nombre_page');
+        $livre->auteur = $request->input('auteur');
+        $livre->isbn = $request->input('isbn');
+        $livre->editeur = $request->input('editeur');
+        $livre->rayon_id = $request->input('rayon_id');
+        $livre->category_id = $request->input('category_id');
         $livre->save();
 
-        // Rediriger vers la liste des livres avec un message de succès
-        return redirect()->route('liste_livre')->with('status', 'Le livre a bien été ajouté avec succès.');
+        return redirect()->back()->with('status', 'Livre ajouté avec succès!');
     }
 
     

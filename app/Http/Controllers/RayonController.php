@@ -31,19 +31,15 @@ class RayonController extends Controller
     // Méthode pour traiter la soumission du formulaire d'ajout d'un nouvel rayon
     public function ajouter_rayon_traitement(Request $request)
     {
-        // Créer une nouvelle instance de l'rayon
-        $rayon = new Rayon();
+        $request->validate([
+            'partie' => 'required|string|max:255',
+            'libelle' => 'required|string|in:Fiction,Policier,Horreur,Biographie',
+        ]);
 
-        // Assigner les valeurs du formulaire aux attributs de l'rayon
-        $rayon->libelle = $request->libelle;
-        $rayon->partie = $request->partie;
-        
+        // Traitement pour ajouter le rayon
+        // ...
 
-        // Sauvegarder l'rayon dans la base de données
-        $rayon->save();
-
-        // Rediriger vers la liste des rayons avec un message de succès
-        return redirect()->route('liste_rayon')->with('status', 'Le rayon a bien été ajouté avec succès.');
+        return redirect()->back()->with('status', 'Rayon ajouté avec succès!');
     }
 
      // Méthode pour afficher le formulaire de mise à jour d'un rayon
@@ -57,22 +53,26 @@ class RayonController extends Controller
      }
  
      // Méthode pour traiter la soumission du formulaire de mise à jour d'un rayon
-     public function update_rayon_traitement(Request $request)
+     public function update_rayon_traitement(Request $request, $id)
      {
-         // Récupérer l'article par l'identifiant dans la requête
-         $rayon = Rayon::find($request->id);
- 
-         // Mettre à jour les attributs de l'rayon avec les valeurs du formulaire
-         $rayon->libelle = $request->libelle;
-         $rayon->partie = $request->partie;
-    
- 
-         // Sauvegarder les modifications dans la base de données
-         $rayon->update();
- 
-         // Rediriger vers la liste des rayons avec un message de succès
-         return redirect('rayons')->with('status', 'L\'article a bien été modifié avec succès.');
-     }
+        $request->validate([
+            'partie' => 'required|string|max:255',
+            'libelle' => 'required|string|in:Fiction,Policier,Horreur,Biographie',
+        ]);
+
+        // Rechercher le rayon par ID
+        $rayon = Rayon::find($id);
+        if ($rayon) {
+            // Mettre à jour les champs
+            $rayon->partie = $request->input('partie');
+            $rayon->libelle = $request->input('libelle');
+            $rayon->save();
+
+            return redirect()->back()->with('status', 'Rayon modifié avec succès!');
+        }
+
+        return redirect()->back()->withErrors(['Rayon introuvable']);
+    }
      // Méthode pour supprimer un article
     public function delete_rayon($id)
     {

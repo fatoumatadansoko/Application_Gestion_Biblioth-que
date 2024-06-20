@@ -6,7 +6,16 @@
     <title>Liste des categorys</title>
     <!-- Inclusion de Bootstrap CSS pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
+    <style>
+        .custom-btn {
+            background-color: #188774;
+            border-color: #188774;
+        }
+        .custom-btn:hover {
+            background-color: #136856;
+            border-color: #136856;
+        }
+    </style>
 </head>
 <body>
     <!-- Conteneur principal -->
@@ -14,7 +23,7 @@
         <!-- Titre de la page -->
         <h1 class="mb-4">Liste des categories</h1>
         <!-- Bouton pour ajouter un nouvel article -->
-        <a href="/ajouter/category" class="btn btn-primary">Ajouter un category</a>   
+        <a href="/ajouter/category" class="btn custom-btn mb-3">Ajouter un category</a>   
 
         <!-- Grille Bootstrap pour afficher les articles -->
         <div class="row">
@@ -30,7 +39,7 @@
                             <!-- Boutons pour supprimer ou modifier l'category -->
                             <div>
                                 <a href="{{ url('/delete_category/'.$category->id) }}" class="btn btn-danger">Supprimer</a>
-                                <a href="/update_category/{{ $category->id }}" class="btn btn-primary">Modifier un category</a>
+                                <a href="/update_category/{{ $category->id }}" class="btn custom-btn mb-3">Modifier un category</a>
                             </div>
                         </div>
                     </div>

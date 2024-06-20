@@ -25,20 +25,20 @@ class CategoryController extends Controller
      // Méthode pour traiter la soumission du formulaire d'ajout d'un nouvel category
     public function ajouter_category_traitement(Request $request)
     {
-        // Créer une nouvelle instance de l'rayon
+        $request->validate([
+            'libelle' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        // Création d'une nouvelle catégorie
         $category = new Category();
-
-        // Assigner les valeurs du formulaire aux attributs de l'category
-        $category->libelle = $request->libelle;
-        $category->description = $request->description;
-        
-
-        // Sauvegarder l'category dans la base de données
+        $category->libelle = $request->input('libelle');
+        $category->description = $request->input('description');
         $category->save();
 
-        // Rediriger vers la liste des rayons avec un message de succès
-        return redirect()->route('liste_category')->with('status', 'Le category a bien été ajouté avec succès.');
+        return redirect()->back()->with('status', 'Catégorie ajoutée avec succès!');
     }
+
      // Méthode pour afficher le formulaire de mise à jour d'une catégories
      public function update_category($id)
      {

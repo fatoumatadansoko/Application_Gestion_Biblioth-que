@@ -28,13 +28,14 @@ Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout')
 Route::get('/rayon', [RayonController::class, 'affiche'])->name('liste_rayon');
 // Route d'affichage du formulaire d'ajout de rayon
 Route::get('/ajouter/rayon', [RayonController::class, 'ajouter_rayon'])->name('ajouter_rayon');
-// Route pour traiter l'ajout d'un article
+// Route pour traiter l'ajout d'un rayon
 Route::post('/ajouter/traitement', [RayonController::class, 'ajouter_rayon_traitement'])->name('ajouter_rayon_traitement');
 // Route pour modifier les rayons
 Route::get('/update_rayon/{id}', [RayonController::class, 'update_rayon'])->name('update_rayon');
 Route::post('/update_rayon_traitement/{id}', [RayonController::class, 'update_rayon_traitement'])->name('update_rayon_traitement');
 // Route pour supprimer un rayon
 Route::get('/delete_rayon/{id}', [RayonController::class, 'delete_rayon'])->name('delete_rayon');
+
 
 // Routes pour les categories
 Route::get('/category', [CategoryController::class, 'affichecategory'])->name('liste_category');
